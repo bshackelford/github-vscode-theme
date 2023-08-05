@@ -37,12 +37,12 @@
       {
         "label": "BShack Light",
         "uiTheme": "vs",
-        "path": "./themes/light.json"
+        "path": "./themes/bshack-light.json"
       },
       {
         "label": "BShack Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/dark.json"
+        "path": "./themes/bshack-dark.json"
       }
     ]
   },
