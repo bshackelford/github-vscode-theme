@@ -3,7 +3,6 @@
   "displayName": "BShack Theme",
   "description": "BShack’s theme for VS Code",
   "version": "1.0.0",
-  "preview": true,
   "publisher": "BShack",
   "license": "MIT",
   "icon": "icon.png",
@@ -49,7 +48,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.1",
     "@changesets/cli": "^2.17.0",
-    "@primer/primitives": "7.1.1",
+    "@primer/primitives": "7.10.0",
     "chroma-js": "^2.1.2",
     "color": "^3.1.2",
     "nodemon": "^2.0.3",

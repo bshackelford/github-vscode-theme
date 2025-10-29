@@ -1,5 +1,107 @@
 # github-vscode-theme
 
+## 6.3.5
+
+### Patch Changes
+
+- [#395](https://github.com/primer/github-vscode-theme/pull/395) [`b7991c4`](https://github.com/primer/github-vscode-theme/commit/b7991c42030126bdaf68f6cdeaefcee5a8d8d876) Thanks [@Damovisa](https://github.com/Damovisa)! - Fix inline code block contrast for High Contrast theme.
+
+## 6.3.4
+
+### Patch Changes
+
+- [#357](https://github.com/primer/github-vscode-theme/pull/357) [`c783d6c`](https://github.com/primer/github-vscode-theme/commit/c783d6c42a13de7e1dc533b4fa475001e02d32b8) Thanks [@simurai](https://github.com/simurai)! - Improve color contrast for default Light and Dark themes
+
+## 6.3.3
+
+### Patch Changes
+
+- [#342](https://github.com/primer/github-vscode-theme/pull/342) [`41b22cc`](https://github.com/primer/github-vscode-theme/commit/41b22cc830bfd59db96a5c663a697b9a4b46d2c8) Thanks [@simurai](https://github.com/simurai)! - Fix tab color for `GitHub Light High Contrast`
+
+* [#343](https://github.com/primer/github-vscode-theme/pull/343) [`89e26fc`](https://github.com/primer/github-vscode-theme/commit/89e26fcf5f1ca695dd1324321abad0b28d1f9c03) Thanks [@broccolinisoup](https://github.com/broccolinisoup)! - Add issue + PR templates
+
+- [#328](https://github.com/primer/github-vscode-theme/pull/328) [`ed605f6`](https://github.com/primer/github-vscode-theme/commit/ed605f65cf463145ea904c06dfe91206b3dacd65) Thanks [@Mekomancer](https://github.com/Mekomancer)! - Increase diff contrast
+
+* [#337](https://github.com/primer/github-vscode-theme/pull/337) [`60db748`](https://github.com/primer/github-vscode-theme/commit/60db74858150191403d3255e605115b9e38dca40) Thanks [@ShadiestGoat](https://github.com/ShadiestGoat)! - Add better placeholder colors for semantic highlighting
+
+- [#346](https://github.com/primer/github-vscode-theme/pull/346) [`2c27f5d`](https://github.com/primer/github-vscode-theme/commit/2c27f5d099dc623c5529af12ffb3809edaaa33c9) Thanks [@simurai](https://github.com/simurai)! - Improve minimap slider contrast
+
+* [#348](https://github.com/primer/github-vscode-theme/pull/348) [`67a22b1`](https://github.com/primer/github-vscode-theme/commit/67a22b109c96e65186918673cc7a091d8ea7622e) Thanks [@broccolinisoup](https://github.com/broccolinisoup)! - Update the color for the active header foreground
+
+- [#344](https://github.com/primer/github-vscode-theme/pull/344) [`19bf4a5`](https://github.com/primer/github-vscode-theme/commit/19bf4a599e6727ec8438d806af775096bda37108) Thanks [@simurai](https://github.com/simurai)! - Bump `primer/primitives` to `7.10.0`
+
+* [#347](https://github.com/primer/github-vscode-theme/pull/347) [`ed61642`](https://github.com/primer/github-vscode-theme/commit/ed61642babfb3beb27459f52f71ff0e171ce6890) Thanks [@simurai](https://github.com/simurai)! - Remove underline from link text
+
+## 6.3.2
+
+### Patch Changes
+
+- [#316](https://github.com/primer/github-vscode-theme/pull/316) [`50149a8`](https://github.com/primer/github-vscode-theme/commit/50149a863e7b402df07bd3ae8a6577adf91193a3) Thanks [@simurai](https://github.com/simurai)! - Differentiate remote status-bar item
+
+## 6.3.1
+
+### Patch Changes
+
+- [#311](https://github.com/primer/github-vscode-theme/pull/311) [`09968c2`](https://github.com/primer/github-vscode-theme/commit/09968c28ae3f773d70d619a03dee8eec776b403a) Thanks [@simurai](https://github.com/simurai)! - Remove `punctuation.definition.string`
+
+* [#312](https://github.com/primer/github-vscode-theme/pull/312) [`71c180a`](https://github.com/primer/github-vscode-theme/commit/71c180abfcd2ee037d61e90934131e8288435af9) Thanks [@simurai](https://github.com/simurai)! - Make `editorIndentGuide` semi-transparent
+
+- [#303](https://github.com/primer/github-vscode-theme/pull/303) [`735ec3c`](https://github.com/primer/github-vscode-theme/commit/735ec3c917e8d34da4bff3eaddb4f71e5aab74ae) Thanks [@simurai](https://github.com/simurai)! - Colorize JSON property-name
+
+## 6.3.0
+
+### Minor Changes
+
+- [#296](https://github.com/primer/github-vscode-theme/pull/296) [`4fe2d37`](https://github.com/primer/github-vscode-theme/commit/4fe2d37844eb2b600ca4295e5a7c9255ffe2ac0d) Thanks [@simurai](https://github.com/simurai)! - Add support for strikethrough
+
+### Patch Changes
+
+- [#299](https://github.com/primer/github-vscode-theme/pull/299) [`b0f4bd9`](https://github.com/primer/github-vscode-theme/commit/b0f4bd9df4807e908fd46fa2ea1cb964e42358fe) Thanks [@simurai](https://github.com/simurai)! - Improve breakpoint icon for colorblind themes
+
+* [#297](https://github.com/primer/github-vscode-theme/pull/297) [`328c05b`](https://github.com/primer/github-vscode-theme/commit/328c05ba05bc941c176681b49e2981fca36c0365) Thanks [@simurai](https://github.com/simurai)! - Remove `string source` scope
+
+- [#292](https://github.com/primer/github-vscode-theme/pull/292) [`6283960`](https://github.com/primer/github-vscode-theme/commit/628396061a306faa61d9c22cbb287bb79f02f5a3) Thanks [@simurai](https://github.com/simurai)! - Colorize inline code blocks for the classic themes
+
+* [#294](https://github.com/primer/github-vscode-theme/pull/294) [`5593a09`](https://github.com/primer/github-vscode-theme/commit/5593a096d817ae7d9e7a9234ec31034d3a042cce) Thanks [@simurai](https://github.com/simurai)! - Improve selection in High Contrast themes
+
+- [#302](https://github.com/primer/github-vscode-theme/pull/302) [`c08c420`](https://github.com/primer/github-vscode-theme/commit/c08c4202024ab8d0914bab6f62e873d734a3a5aa) Thanks [@simurai](https://github.com/simurai)! - Reduce contrast for whitespace characters
+
+* [#298](https://github.com/primer/github-vscode-theme/pull/298) [`130db93`](https://github.com/primer/github-vscode-theme/commit/130db93c39d565656ee886e352e9f7c4c2d05a9c) Thanks [@simurai](https://github.com/simurai)! - Reduce contrast for line numbers
+
+## 6.2.0
+
+### Minor Changes
+
+- [#287](https://github.com/primer/github-vscode-theme/pull/287) [`dd81ff1`](https://github.com/primer/github-vscode-theme/commit/dd81ff10180ecd76fd108defa7d2d61db9534462) Thanks [@simurai](https://github.com/simurai)! - Improve diff colors
+
+* [#274](https://github.com/primer/github-vscode-theme/pull/274) [`9b88e1c`](https://github.com/primer/github-vscode-theme/commit/9b88e1c652f649bf28bc149d681010c5fd8f22f1) Thanks [@BrunoCoimbra](https://github.com/BrunoCoimbra)! - Add bracket pair colorization
+
+- [#278](https://github.com/primer/github-vscode-theme/pull/278) [`a877e3f`](https://github.com/primer/github-vscode-theme/commit/a877e3f80496af89d000f5502764e0d579105325) Thanks [@clavin](https://github.com/clavin)! - Add inlay hint styles
+
+* [#184](https://github.com/primer/github-vscode-theme/pull/184) [`16d4682`](https://github.com/primer/github-vscode-theme/commit/16d468237346e27eafe265d8fad22ba918367b83) Thanks [@abeprincec](https://github.com/abeprincec)! - Add syntax highlight for puncation.section.embedded
+
+- [#239](https://github.com/primer/github-vscode-theme/pull/239) [`d1d663b`](https://github.com/primer/github-vscode-theme/commit/d1d663b5e5ee9c388c5ddad34bcf8798c59da6cf) Thanks [@jeffgennari](https://github.com/jeffgennari)! - Add debug and symbol icon colors
+
+### Patch Changes
+
+- [#285](https://github.com/primer/github-vscode-theme/pull/285) [`9eece4d`](https://github.com/primer/github-vscode-theme/commit/9eece4db938df76cad3e19f5a42ee8f0c2e5b762) Thanks [@simurai](https://github.com/simurai)! - Fix icons in high contrast themes
+
+* [#288](https://github.com/primer/github-vscode-theme/pull/288) [`74a48e5`](https://github.com/primer/github-vscode-theme/commit/74a48e5dde97f057e01f2956fb861a4b56692098) Thanks [@simurai](https://github.com/simurai)! - Increase contrast of the terminal
+
+## 6.1.0
+
+### Minor Changes
+
+- [#212](https://github.com/primer/github-vscode-theme/pull/212) [`f03ca46`](https://github.com/primer/github-vscode-theme/commit/f03ca46b7ace7d98f8e6761dca56083e1ba54c3c) Thanks [@akiirui](https://github.com/akiirui)! - fix: add missing scope variable.other.enummember
+
+* [#193](https://github.com/primer/github-vscode-theme/pull/193) [`8bb0bc8`](https://github.com/primer/github-vscode-theme/commit/8bb0bc8a2150515ec5c6d9467335b6b827870ec5) Thanks [@serpilacar](https://github.com/serpilacar)! - Update markdown inline code scope
+
+- [#252](https://github.com/primer/github-vscode-theme/pull/252) [`706236c`](https://github.com/primer/github-vscode-theme/commit/706236cfaa6bdeb7ba3942d63eb03a82097fcc04) Thanks [@magic-akari](https://github.com/magic-akari)! - feat: add underline support
+
+### Patch Changes
+
+- [#268](https://github.com/primer/github-vscode-theme/pull/268) [`6bc9e1a`](https://github.com/primer/github-vscode-theme/commit/6bc9e1a21f3251b1064683e8d8fce4172a56e2a5) Thanks [@simurai](https://github.com/simurai)! - Update remote statusbar item
+
 ## 6.0.0
 
 ### Major Changes

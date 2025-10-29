@@ -22,6 +22,10 @@ function getTheme({ theme, name }) {
     return themes({ dark: color, dark_high_contrast: color, dark_colorblind: color, dark_dimmed: color })
   }
 
+  const onlyHighContrast = (color) => {
+    return themes({ light_high_contrast: color, dark_high_contrast: color })
+  }
+
   const onlyDarkHighContrast = (color) => {
     return themes({ dark_high_contrast: color })
   }
@@ -48,7 +52,11 @@ function getTheme({ theme, name }) {
       "textBlockQuote.border"    : color.border.default,
       "textCodeBlock.background" : color.neutral.muted,
       "textPreformat.foreground" : color.fg.muted,
+      "textPreformat.background" : color.neutral.muted,
       "textSeparator.foreground" : color.border.muted,
+
+      "icon.foreground"           : color.fg.muted,
+      "keybindingLabel.foreground": color.fg.default,
 
       "button.background"     : color.btn.primary.bg,
       "button.foreground"     : color.btn.primary.text,
@@ -128,10 +136,16 @@ function getTheme({ theme, name }) {
       "statusBar.foreground"             : color.fg.muted,
       "statusBar.background"             : color.canvas.default,
       "statusBar.border"                 : color.border.default,
+      "statusBar.focusBorder"            : alpha(color.accent.emphasis, 0.5),
       "statusBar.noFolderBackground"     : color.canvas.default,
-      "statusBar.debuggingBackground"    : color.danger.emphasis,
       "statusBar.debuggingForeground"    : color.fg.onEmphasis,
-      "statusBarItem.prominentBackground": color.canvas.subtle,
+      "statusBar.debuggingBackground"    : color.danger.emphasis,
+      "statusBarItem.prominentBackground": color.neutral.muted,
+      "statusBarItem.remoteForeground"   : color.fg.default,
+      "statusBarItem.remoteBackground"   : lightDark(color.scale.gray[1], color.scale.gray[6]),
+      "statusBarItem.hoverBackground"    : alpha(color.fg.default, 0.08),
+      "statusBarItem.activeBackground"   : alpha(color.fg.default, 0.12),
+      "statusBarItem.focusBorder"        : color.accent.emphasis,
 
       "editorGroupHeader.tabsBackground": color.canvas.inset,
       "editorGroupHeader.tabsBorder"    : color.border.default,
@@ -160,11 +174,11 @@ function getTheme({ theme, name }) {
       "editor.foldBackground"             : alpha(color.neutral.emphasis, 0.1),
       "editor.lineHighlightBackground"    : color.codemirror.activelineBg,
       "editor.lineHighlightBorder"        : onlyDarkHighContrast(color.accent.fg),
-      "editorLineNumber.foreground"       : color.codemirror.linenumberText,
+      "editorLineNumber.foreground"       : lightDark(scale.gray[4], scale.gray[4]),
       "editorLineNumber.activeForeground" : color.fg.default,
-      "editorIndentGuide.background"      : color.border.muted,
-      "editorIndentGuide.activeBackground": color.border.default,
-      "editorWhitespace.foreground"       : color.fg.subtle,
+      "editorIndentGuide.background"      : alpha(color.fg.default, 0.12),
+      "editorIndentGuide.activeBackground": alpha(color.fg.default, 0.24),
+      "editorWhitespace.foreground"       : lightDark( scale.gray[3], scale.gray[5]),
       "editorCursor.foreground"           : color.accent.fg,
 
       "editor.findMatchBackground"            : color.attention.emphasis,
@@ -179,19 +193,36 @@ function getTheme({ theme, name }) {
       "editor.wordHighlightStrongBorder"      : alpha(color.neutral.muted, 0.6),
       "editorBracketMatch.background"         : alpha(scale.green[3], 0.25),
       "editorBracketMatch.border"             : alpha(scale.green[3], 0.6),
+      // text selection for High Contrast themes
+      "editor.selectionForeground"            : onlyHighContrast(color.fg.onEmphasis),
+      "editor.selectionBackground"            : onlyHighContrast(color.neutral.emphasisPlus),
+      "editor.inactiveSelectionBackground"    : onlyHighContrast(color.neutral.emphasis),
+
+      "editorInlayHint.background": alpha(scale.gray[3], 0.2),
+      "editorInlayHint.foreground": color.fg.muted,
+      "editorInlayHint.typeBackground": alpha(scale.gray[3], 0.2),
+      "editorInlayHint.typeForeground": color.fg.muted,
+      "editorInlayHint.paramBackground": alpha(scale.gray[3], 0.2),
+      "editorInlayHint.paramForeground": color.fg.muted,
 
       "editorGutter.modifiedBackground": color.attention.muted,
       "editorGutter.addedBackground"   : color.success.muted,
       "editorGutter.deletedBackground" : color.danger.muted,
 
-      "diffEditor.insertedTextBackground": color.success.subtle,
-      "diffEditor.removedTextBackground" : color.danger.subtle,
+      "diffEditor.insertedLineBackground": lightDark(alpha(scale.green[1], 0.3), alpha(scale.green[5], 0.15)),
+      "diffEditor.insertedTextBackground": lightDark(alpha(scale.green[2], 0.5), alpha(scale.green[3], 0.3)),
+      "diffEditor.removedLineBackground" : lightDark(alpha(scale.red[1], 0.3), alpha(scale.red[5], 0.15)),
+      "diffEditor.removedTextBackground" : lightDark(alpha(scale.red[3], 0.4), alpha(scale.red[3], 0.3)),
 
       "scrollbar.shadow"                  : alpha(scale.gray[5], 0.2),
-      "scrollbarSlider.background"        : alpha(scale.gray[4], 0.2),
-      "scrollbarSlider.hoverBackground"   : alpha(scale.gray[4], 0.27),
-      "scrollbarSlider.activeBackground"  : alpha(scale.gray[4], 0.53),
+      "scrollbarSlider.background"        : lightDark(alpha(scale.gray[4], 0.2), alpha(scale.gray[3], 0.2)),
+      "scrollbarSlider.hoverBackground"   : lightDark(alpha(scale.gray[4], 0.24), alpha(scale.gray[3], 0.24)),
+      "scrollbarSlider.activeBackground"  : lightDark(alpha(scale.gray[4], 0.28), alpha(scale.gray[3], 0.28)),
       "editorOverviewRuler.border"        : lightDark(scale.white, scale.black),
+
+      "minimapSlider.background"          : lightDark(alpha(scale.gray[4], 0.2), alpha(scale.gray[3], 0.2)),
+      "minimapSlider.hoverBackground"     : lightDark(alpha(scale.gray[4], 0.24), alpha(scale.gray[3], 0.24)),
+      "minimapSlider.activeBackground"    : lightDark(alpha(scale.gray[4], 0.28), alpha(scale.gray[3], 0.28)),
 
       "panel.background"               : color.canvas.inset,
       "panel.border"                   : color.border.default,
@@ -200,7 +231,56 @@ function getTheme({ theme, name }) {
       "panelTitle.inactiveForeground"  : color.fg.muted,
       "panelInput.border"              : color.border.default,
 
-      "terminal.foreground": color.fg.muted,
+      "debugIcon.breakpointForeground": color.danger.fg,
+
+      "debugConsole.infoForeground": lightDark( scale.gray[6], scale.gray[3]),
+      "debugConsole.warningForeground": lightDark( scale.yellow[6], scale.yellow[3]),
+      "debugConsole.errorForeground": lightDark( scale.red[5], scale.red[2]),
+      "debugConsole.sourceForeground": lightDark( scale.yellow[5], scale.yellow[2]),
+      "debugConsoleInputIcon.foreground": lightDark( scale.purple[6], scale.purple[3]),
+
+      "debugTokenExpression.name": lightDark(scale.blue[6], scale.blue[2]),
+      "debugTokenExpression.value": lightDark(scale.blue[8], scale.blue[1]),
+      "debugTokenExpression.string": lightDark(scale.blue[8], scale.blue[1]),
+      "debugTokenExpression.boolean": lightDark( scale.green[6], scale.green[2]),
+      "debugTokenExpression.number": lightDark( scale.green[6], scale.green[2]),
+      "debugTokenExpression.error": lightDark( scale.red[6], scale.red[2]),
+
+      "symbolIcon.arrayForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.booleanForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.classForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.colorForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.constructorForeground": lightDark( scale.purple[8], scale.purple[2]),
+      "symbolIcon.enumeratorForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.enumeratorMemberForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.eventForeground": lightDark( scale.gray[6], scale.gray[4]),
+      "symbolIcon.fieldForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.fileForeground": lightDark( scale.yellow[6], scale.yellow[3]),
+      "symbolIcon.folderForeground": lightDark( scale.yellow[6], scale.yellow[3]),
+      "symbolIcon.functionForeground": lightDark( scale.purple[6], scale.purple[3]),
+      "symbolIcon.interfaceForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.keyForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.keywordForeground": lightDark( scale.red[6], scale.red[3]),
+      "symbolIcon.methodForeground": lightDark( scale.purple[6], scale.purple[3]),
+      "symbolIcon.moduleForeground": lightDark( scale.red[6], scale.red[3]),
+      "symbolIcon.namespaceForeground": lightDark( scale.red[6], scale.red[3]),
+      "symbolIcon.nullForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.numberForeground": lightDark( scale.green[6], scale.green[3]),
+      "symbolIcon.objectForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.operatorForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.packageForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.propertyForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.referenceForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.snippetForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.stringForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.structForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.textForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.typeParameterForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.unitForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.variableForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.constantForeground": lightDark( scale.green[6], scale.green),
+
+      "terminal.foreground": color.fg.default,
       'terminal.ansiBlack': color.ansi.black,
       'terminal.ansiRed': color.ansi.red,
       'terminal.ansiGreen': color.ansi.green,
@@ -217,6 +297,14 @@ function getTheme({ theme, name }) {
       'terminal.ansiBrightMagenta': color.ansi.magentaBright,
       'terminal.ansiBrightCyan': color.ansi.cyanBright,
       'terminal.ansiBrightWhite': color.ansi.whiteBright,
+
+      "editorBracketHighlight.foreground1": lightDark(scale.blue[5], scale.blue[2]),
+      "editorBracketHighlight.foreground2": lightDark(scale.green[5], scale.green[2]),
+      "editorBracketHighlight.foreground3": lightDark(scale.yellow[5], scale.yellow[2]),
+      "editorBracketHighlight.foreground4": lightDark(scale.red[5], scale.red[2]),
+      "editorBracketHighlight.foreground5": lightDark(scale.pink[5], scale.pink[2]),
+      "editorBracketHighlight.foreground6": lightDark(scale.purple[5], scale.purple[2]),
+      "editorBracketHighlight.unexpectedBracket.foreground": color.fg.muted, // gray
 
       "gitDecoration.addedResourceForeground"      : color.success.fg,
       "gitDecoration.modifiedResourceForeground"   : color.attention.fg,
@@ -235,7 +323,7 @@ function getTheme({ theme, name }) {
       "peekViewEditor.background"              : onlyDark(color.neutral.subtle),
       "peekViewResult.background"              : onlyDark(scale.gray[9]),
 
-      "settings.headerForeground"        : color.fg.muted,
+      "settings.headerForeground"        : color.fg.default,
       "settings.modifiedItemIndicator"   : color.attention.muted,
       "welcomePage.buttonBackground"     : color.btn.bg,
       "welcomePage.buttonHoverBackground": color.btn.hoverBg,
@@ -250,9 +338,19 @@ function getTheme({ theme, name }) {
       },
       {
         scope: [
+          "constant.other.placeholder",
+          "constant.character"
+        ],
+        settings: {
+          foreground: lightDark(scale.red[5], scale.red[3])
+        },
+      },
+      {
+        scope: [
           "constant",
           "entity.name.constant",
           "variable.other.constant",
+          "variable.other.enummember",
           "variable.language",
           "entity",
         ],
@@ -324,7 +422,6 @@ function getTheme({ theme, name }) {
       {
         scope: [
           "string",
-          "punctuation.definition.string",
           "string punctuation.section.embedded source",
         ],
         settings: {
@@ -399,12 +496,6 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        scope: "string source",
-        settings: {
-          foreground: color.fg.default,
-        },
-      },
-      {
         scope: "string variable",
         settings: {
           foreground: lightDark(scale.blue[6], scale.blue[2])
@@ -447,6 +538,12 @@ function getTheme({ theme, name }) {
         },
       },
       {
+        scope: "support.type.property-name.json",
+        settings: {
+          foreground: lightDark(scale.green[6], scale.green[1])
+        },
+      },
+      {
         scope: "meta.module-reference",
         settings: {
           foreground: lightDark(scale.blue[6], scale.blue[2])
@@ -486,7 +583,19 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        scope: "markup.raw",
+        scope: ["markup.underline"],
+        settings: {
+          fontStyle: "underline",
+        },
+      },
+      {
+        scope: ["markup.strikethrough"],
+        settings: {
+          fontStyle: "strikethrough",
+        },
+      },
+      {
+        scope: "markup.inline.raw",
         settings: {
           foreground: lightDark(scale.blue[6], scale.blue[2])
         },
@@ -500,6 +609,12 @@ function getTheme({ theme, name }) {
         settings: {
           background: lightDark(scale.red[0], scale.red[9]),
           foreground: lightDark(scale.red[7], scale.red[2])
+        },
+      },
+      {
+        scope: ["punctuation.section.embedded"],
+        settings: {
+          foreground: lightDark(scale.red[5], scale.red[3])
         },
       },
       {
@@ -576,7 +691,6 @@ function getTheme({ theme, name }) {
         scope: ["constant.other.reference.link", "string.other.link"],
         settings: {
           foreground: lightDark(scale.blue[8], scale.blue[1]),
-          fontStyle: "underline",
         },
       },
     ],
